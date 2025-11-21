@@ -81,12 +81,10 @@ recommend if you have any problems installing R and Positron on your personal co
 * Download R from
   the [CRAN website](https://cran.r-project.org/bin/windows/base/release.htm){target="_blank"}.
 * Run the `.exe` file that was just downloaded.
-* Go to the [Positron download page](){target="_blank"}
-* Go to the [RStudio download page](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}.
-* Under *Installers* select **RStudio x.yy.zzz - Windows.
-  Vista/7/8/10** (where x, y, and z represent version numbers).
+* Go to the [Positron download page](https://positron.posit.co/download.html){target="_blank"}
+* Accept the license agreement, and download the appropriate windows installer, probably Windows 10, 11 x64 (user level install)
 * Double click the file to install it.
-* Once it's installed, open RStudio to make sure it works and you don't get any
+* Once it's installed, open Positron to make sure it works and you don't get any
   error messages.
 
 :::::::::::::::::::::::::
