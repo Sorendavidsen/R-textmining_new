@@ -94,12 +94,14 @@ Here we can see the positive and negative words used in the articles.
 
 With ´bing´ we only look at the sentiment in a binary fashion - a word is either positive or negative. If we try to do a similar analysis with AFINN, it looks different.
 
-```{r install_packages_textdata}
+```{r install_packages_textdata, eval = FALSE}
 install.packages("textdata")
 library(textdata)
 ```
 
-
+```{r install_packages_textdata_show, message = FALSE}
+library(textdata)
+```
 
 
 
