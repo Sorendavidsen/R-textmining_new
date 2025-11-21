@@ -82,7 +82,7 @@ updated_stop_words %>%
 :::
 
 ::: solution
-### Remove stopword
+### Remove stopwords
 
 First, create a vector with the word(s) you wish to remove from the stopwords list.
 
