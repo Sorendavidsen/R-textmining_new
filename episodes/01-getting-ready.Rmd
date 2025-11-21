@@ -67,7 +67,7 @@ download.file("https://raw.githubusercontent.com/KUBDatalab/R-textmining_new/mai
 
 After downloading the data you need to load the data in R's memory by using the function `read_csv()`.
 
-```{r, eval = TRUE,  message = FALSE, purl = FALSE, echo = TRUE}
+```{r read_csv_articles, eval = TRUE,  message = FALSE, purl = FALSE, echo = TRUE}
 articles <- read_csv("data/articles.csv", na = c("NA", "NULL", ""))
 ```
 
@@ -96,7 +96,7 @@ The 'tidyverse'-package has some functions that allow you to inspect the dataset
 ```{r head}
 head(articles)
 ```
-```{r}
+```{r tail}
 tail(articles)
 ```
 
@@ -113,7 +113,7 @@ glimpse(articles)
 
 :::::::::::::::: solution
 ### Get the names of the variables / columns
-```{r}
+```{r names}
 names(articles)
 ```
  
@@ -122,7 +122,7 @@ names(articles)
 :::::::::::::::: solution
 ### Get the dimension of the dataset (number of rows and coloumns)
 
-```{r}
+```{r dim}
 dim(articles)
 ```
 
