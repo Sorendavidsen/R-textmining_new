@@ -65,11 +65,11 @@ contact: 'kubdatalab@kb.dk'
 
 # Order of episodes in your lesson
 episodes: 
-- 00-introduction.Rmd
-- 01-getting-ready.Rmd
-- 02-preparing-data.Rmd
-- 03-frequency-analysis.Rmd
-- 04-sentiment.Rmd
+- introduction.Rmd
+- getting-ready.Rmd
+- preparing-data.Rmd
+- frequency-analysis.Rmd
+- sentiment.Rmd
 - whats-next.Rmd
 
 # Information for Learners
