@@ -19,12 +19,12 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-```{r}
+```{r chunk_options, echo = FALSE}
 knitr::opts_chunk$set(warning = FALSE)
 ```
 
 
-```{r, include = FALSE}
+```{r articles_filtered, include = FALSE}
 library(tidyverse)
 library(tidytext)
 library(tm)
@@ -43,19 +43,19 @@ From the previous section we have a dataset containing a list of words in the te
 There are multiple sentiment lexicons. For a start we will be using the `bing` lexicon. This lexicon categorizes words as either positive or negative.
 
 
-```{r}
+```{r get_sentiment_bing}
 get_sentiments("bing")
 ```
 
 In order to use the `bing`-lexicon, we have to save it.
 
-```{r}
+```{r object_get_sentiment_bing}
 bing <- get_sentiments("bing")
 ```
 
 We now need to combine the sentiment to the words from our articles. We do this by performing an inner_join.
 
-```{r, warning = FALSE}
+```{r bing_inner_join, warning = FALSE}
 articles_bing <- articles_filtered %>% 
   inner_join(bing)
 
@@ -66,7 +66,7 @@ In R, `inner_join()` is commonly used to combine datasets based on a shared colu
 
 When we have the combined dataset we can begin making a sentiment analysis. A start could be to count the number of positive and negative words used in articles, per president.
 
-```{r}
+```{r articles_bing_group_by_inner_join}
 articles_bing %>% 
   group_by(president) %>% 
   summarise(positive = sum(sentiment == "positive"),
@@ -77,7 +77,7 @@ This shows that more positive than negative words are associated with both presi
 
 Another interesting thing to look at would the 10 most positive and negative words used in the articles.
 
-```{r}
+```{r facet_wrap}
 articles_bing %>% 
   count(word, sentiment, sort = TRUE) %>% 
   ungroup() %>% 
@@ -94,7 +94,7 @@ Here we can see the positive and negative words used in the articles.
 
 With ´bing´ we only look at the sentiment in a binary fashion - a word is either positive or negative. If we try to do a similar analysis with AFINN, it looks different.
 
-```{r}
+```{r install_packages_textdata}
 install.packages("textdata")
 library(textdata)
 ```
@@ -103,17 +103,17 @@ library(textdata)
 
 
 
-```{r}
+```{r get_sentiment_afinn}
 afinn <- get_sentiments("afinn")
 ```
 
 
-```{r}
+```{r inner_join_afinn}
 articles_afinn <- articles_filtered %>% 
   inner_join(afinn) 
 ```
 
-```{r}
+```{r afinn_summarise}
 articles_afinn %>% 
   group_by(president) %>% 
   summarise(sentiment = sum(value))
@@ -121,7 +121,7 @@ articles_afinn %>%
 
 
 
-```{r}
+```{r afinn_president_value_geom_col}
 articles_afinn %>% 
   group_by(president, value) %>% 
   summarise(sentiment = sum(value)) %>% 
@@ -131,7 +131,7 @@ articles_afinn %>%
 
 ```
 
-```{r}
+```{r articles_afinn_ggplot_word_president}
 articles_afinn %>% 
   count(president, word, value, sort = TRUE) %>% 
   ungroup() %>% 
