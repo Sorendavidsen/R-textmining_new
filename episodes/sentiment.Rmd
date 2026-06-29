@@ -29,6 +29,7 @@ knitr::opts_chunk$set(warning = FALSE)
 library(tidyverse)
 library(tidytext)
 library(tm)
+
 articles_filtered <- read_csv("data/articles_filtered.csv", na = c("NA", "NULL", ""))
 ```
 
